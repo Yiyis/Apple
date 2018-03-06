@@ -1,11 +1,14 @@
+/******Body-Centric Technologies**************/
+/******Instructed by Prof. Kate Hartman*******/
+/******interfaces of talking apples **********/
+/******Yiyi Shao & Feng Yuan *****************/
 
 var song;
-var songs;
 var song1;
 var song2;
 var song3;
 var song4;
-var song5;
+
 
 
 var serial;                            // variable to hold an instance of the serialport library
@@ -32,16 +35,12 @@ function setup() {
  
 }
 
-
-function preload(){
-  
+//proload sound files
+function preload(){  
    song1 = loadSound("FuckOff.mp3");
    song2 = loadSound("Heng.mp3");
    song3 = loadSound("Ah.mp3");
    song4 = loadSound("DonTouchMe.mp3");  
-
-   //songs = [song1,song2,song3,song4,song5];  
-   //song  = random(songs);
 }
 
 function serverConnected() {
@@ -77,8 +76,9 @@ function serialEvent() {
 function draw(){
 background(0);
   fill(255);
-  text("sensor value: " + inData, 30, 30);
-  console.log(inData);
+  text("sensor value: " + inData, 30, 30); // console for the incoming data
+  console.log(inData);//trouble shooting purpose
+  //play sound according to incoming data from arduino
      if (inData == 5){
       song1.play();
  }
@@ -91,10 +91,5 @@ background(0);
       if (inData == 6){
       song4.play();
  }
-
-
-
-
-
 
 }
