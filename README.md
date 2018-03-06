@@ -1,4 +1,4 @@
-# Apple
+# TalkingApples
 Body-Centric Technologies
 Instructed by Prof. Kate Harman
 
